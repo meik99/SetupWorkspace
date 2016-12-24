@@ -3,9 +3,10 @@
 * ~~Update & Upgrade~~
 * ~~Install Java~~
 * Install IDEs
-  * CodeBlocks
+  * ~~CodeBlocks~~
   * ~~InteliJ~~
   * Android Studio
+   * Install Android SDK
   * ~~WebStorm~~
-* Create Projects-Dir
+* ~~Create Projects-Dir~~
 * ~~Install Chrome~~
