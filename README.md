@@ -1,12 +1,11 @@
 # ToDo
 ## Linux
-* Update & Upgrade
-* Install Java
+* ~~Update & Upgrade~~
+* ~~Install Java~~
 * Install IDEs
   * CodeBlocks
-  * InteliJ
+  * ~~InteliJ~~
   * Android Studio
-  * WebStorm
+  * ~~WebStorm~~
 * Create Projects-Dir
-* Clone Repos into Projects-Dir
-* Install Chrome
+* ~~Install Chrome~~
