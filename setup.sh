@@ -74,6 +74,12 @@ mv $webstorm_folder /opt/
 echo "alias webstorm='sh /opt/$webstorm_folder/bin/webstorm.sh'" >> $userbashrc
 source $userbashrc
 
+#install codeblocks
+apt install -f codeblocks
+
+#create projects dir
+mkdir $userhome/Projects
+
 #delete tmp folder
 cd ..
 rm -rf ./tmp
