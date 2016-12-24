@@ -42,3 +42,7 @@ if [ $? -ne 0 ]
   then apt install -f
   dpkg -i google-chrome*.deb
 fi
+
+#delete tmp folder
+cd ..
+rm -rf ./tmp
