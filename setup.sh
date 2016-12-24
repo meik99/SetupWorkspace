@@ -8,7 +8,7 @@ fi
 username="mrynkiewicz"
 
 #update and upgrade system
-apt update && apt upgrade -yf
+apt-get update && apt-get upgrade -yf
 
 #create temporary work folder
 mkdir tmp
@@ -32,3 +32,13 @@ source /home/$username/.bashrc
 #add alias
 echo "alias java='/opt/jdk/bin/java'" >> /home/$username/.bashrc
 source /home/$username/.bashrc
+
+#download chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i google-chrome*.deb
+
+# check if succeeded, if not install missing depenedencies
+if [ $? -ne 0 ]
+  then apt install -f
+  dpkg -i google-chrome*.deb
+fi
