@@ -21,14 +21,14 @@ wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-
 tar -xf jdk-8u112-linux-x64.tar.gz
 
 #change owner of /opt to my username
-chown -R $(username):$(username) /opt
-chown -R $(username):$(username) /opt/*
+chown -R $username:$username /opt
+chown -R $username:$username /opt/*
 mv jdk1.8.0_112 /opt/jdk
 
 #export JAVA_HOME
-echo "export JAVA_HOME=/opt/jdk/" >> /home/$(username)/.bashrc
-source /home/$(username)/.bashrc
+echo "export JAVA_HOME=/opt/jdk/" >> /home/$username/.bashrc
+source /home/$username/.bashrc
 
 #add alias
-echo "alias java='/opt/jdk/bin/java'" >> /home/$(username)/.bashrc
-source /home/$(username)/.bashrc
+echo "alias java='/opt/jdk/bin/java'" >> /home/$username/.bashrc
+source /home/$username/.bashrc
