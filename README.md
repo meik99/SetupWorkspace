@@ -6,7 +6,7 @@
   * ~~CodeBlocks~~
   * ~~InteliJ~~
   * Android Studio
-   * Install Android SDK
+    * Install Android SDK
   * ~~WebStorm~~
 * ~~Create Projects-Dir~~
 * ~~Install Chrome~~
