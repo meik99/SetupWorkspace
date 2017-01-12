@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 #set username
-username="mrynkiewicz"
+username=$SUDO_USER
 java_download="http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz"
 java_archive=${java_download##*/}
 java_folder="jdk"
