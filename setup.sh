@@ -26,6 +26,7 @@ android_archive=${android_download##*/}
 android_folder="android-studio"
 userhome=/home/$username/
 userbashrc=$userhome/.bashrc
+userprofile=$userhome/.profile
 
 #update and upgrade system
 apt-get update && apt-get upgrade -yf
@@ -45,8 +46,8 @@ tar -xf $java_archive -C $java_folder
 mv $java_folder /opt/
 
 #export JAVA_HOME
-echo "export JAVA_HOME=/opt/$java_folder/" >> $userbashrc
-source $userbashrc
+echo "export JAVA_HOME=/opt/$java_folder/" >> $userprofile
+source $userprofile
 
 #add alias
 echo "alias java='/opt/$java_folder/bin/java'" >> $userbashrc
