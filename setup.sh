@@ -21,6 +21,9 @@ intelij_folder="intelij"
 webstorm_download="https://download.jetbrains.com/webstorm/WebStorm-2016.3.2.tar.gz"
 webstorm_archive=${webstorm_download##*/}
 webstorm_folder="webstorm"
+android_download="https://dl.google.com/dl/android/studio/ide-zips/2.2.3.0/android-studio-ide-145.3537739-linux.zip"
+android_archive=${android_download##*/}
+android_folder="android-studio"
 userhome=/home/$username/
 userbashrc=$userhome/.bashrc
 
@@ -65,7 +68,7 @@ wget --no-check-certificate --no-cookies $intelij_download
 mkdir $intelij_folder
 tar -xf $intelij_archive -C $intelij_folder
 #move intelij to /opt
-mv $intelij_folder /opt/
+mv $intelij_folder /opt/$intelij_folder
 #add alias
 echo "alias intelij='sh /opt/$intelij_folder/bin/intelij.sh'" >> $userbashrc
 source $userbashrc
@@ -76,7 +79,18 @@ wget --no-check-certificate --no-cookies $webstorm_download
 mkdir $webstorm_folder
 tar -xf $webstorm_archive -C $webstorm_folder
 #move webstorm to /opt
-mv $webstorm_folder /opt/
+mv $webstorm_folder /opt/$webstorm_folder
+#add alias
+echo "alias webstorm='sh /opt/$webstorm_folder/bin/webstorm.sh'" >> $userbashrc
+source $userbashrc
+
+#download android-studio
+wget --no-check-certificate --no-cookies $android_download
+#extract webstorm
+mkdir $android_folder
+tar -xf $webstorm_archive -C $android_folder
+#move webstorm to /opt
+mv $android_folder /opt/$android_folder
 #add alias
 echo "alias webstorm='sh /opt/$webstorm_folder/bin/webstorm.sh'" >> $userbashrc
 source $userbashrc
@@ -89,6 +103,8 @@ mkdir $userhome/Projects
 
 #delete tmp folder
 cd ..
+rm -r tmp
 
 chown -R $username:$username /opt
+chown -R $username:$username /opt/
 chown -R $username:$username /opt/*
