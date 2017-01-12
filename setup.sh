@@ -30,11 +30,10 @@ cd tmp
 #thanks to 
 #http://stackoverflow.com/questions/10268583/downloading-java-jdk-on-linux-via-wget-is-shown-license-page-instead
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" $java_download
+mkdir $java_folder
 tar -xf $java_archive -C $java_folder
 
 #change owner of /opt to my username
-chown -R $username:$username /opt
-chown -R $username:$username /opt/*
 mv $java_folder /opt/
 
 #export JAVA_HOME
@@ -58,6 +57,7 @@ fi
 #download intelij
 wget --no-check-certificate --no-cookies $intelij_download
 #extract intelij
+mkdir $intelij_folder
 tar -xf $intelij_archive -C $intelij_folder
 #move intelij to /opt
 mv $intelij_folder /opt/
@@ -68,6 +68,7 @@ source $userbashrc
 #download webstorm
 wget --no-check-certificate --no-cookies $webstorm_download
 #extract webstorm
+mkdir $webstorm_folder
 tar -xf $webstorm_archive -C $webstorm_folder
 #move webstorm to /opt
 mv $webstorm_folder /opt/
@@ -83,4 +84,6 @@ mkdir $userhome/Projects
 
 #delete tmp folder
 cd ..
-rm -rf ./tmp
+
+chown -R $username:$username /opt
+chown -R $username:$username /opt/*
