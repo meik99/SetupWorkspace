@@ -5,6 +5,12 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+if [ -n "$SUDO_USER" ] || [ -z "$SUDO_USER" ]; then
+  read -p "Username: " username
+else
+  username=$SUDO_USER
+fi
+  
 #set username
 username=$SUDO_USER
 java_download="http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz"
